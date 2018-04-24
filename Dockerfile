@@ -52,7 +52,7 @@ ADD fix-permissions.sh /usr/local/bin/fix-permissions.sh
 ENV HOME /home/$NB_USER
 RUN mkdir $HOME/.jupyter \
     && cd /tmp \
-    && curl -s -o Miniconda3.sh https://repo.continuum.io/miniconda/Miniconda3-4.3.21-Linux-x86_64.sh \
+    && curl -o Miniconda3.sh https://repo.continuum.io/miniconda/Miniconda3-4.3.21-Linux-x86_64.sh \
     && echo c1c15d3baba15bf50293ae963abef853 Miniconda3.sh | md5sum -c - \
     && bash Miniconda3.sh -b -p $CONDA_DIR \
     && rm Miniconda3.sh \
