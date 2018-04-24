@@ -55,9 +55,9 @@ RUN mkdir $HOME/.jupyter \
     && curl -s -o Miniconda3.sh https://repo.continuum.io/miniconda/Miniconda3-4.3.21-Linux-x86_64.sh \
     && echo c1c15d3baba15bf50293ae963abef853 Miniconda3.sh | md5sum -c - \
     && bash Miniconda3.sh -b -p $CONDA_DIR \
-    && conda config --set ssl_verify false \
-    && rm Miniconda3.sh \
     && export PATH=$CONDA_DIR/bin:$PATH \
+    && rm Miniconda3.sh \
+    && $CONDA_DIR/bin/conda config --set ssl_verify false \
     && $CONDA_DIR/bin/conda config --system --prepend channels conda-forge  \
     && $CONDA_DIR/bin/conda config --system --set auto_update_conda false  \
     && $CONDA_DIR/bin/conda config --system --set show_channel_urls true  \
