@@ -34,7 +34,7 @@ RUN echo 'PS1="\u@\h:\w\\$ \[$(tput sgr0)\]"' >> /root/.bashrc \
     && chmod -R ug+rwx /opt \
     && useradd -m -s /bin/bash -N -u $NB_UID $NB_USER \
     && usermod -g root $NB_USER \
-    && yum install -y curl wget curl tree java-headless bzip2 gnupg2 sqlite3 gcc gcc-c++ glibc-devel git mesa-libGL mesa-libGL-devel ca-certificates vim 
+    && yum install -y curl wget curl tree java-headless bzip2 gnupg2 sqlite3 gcc gcc-c++ glibc-devel git mesa-libGL mesa-libGL-devel vim 
     
 
 
@@ -53,7 +53,7 @@ ENV HOME /home/$NB_USER
 RUN mkdir $HOME/.jupyter \
     && cd /tmp \
     && curl -s -o Miniconda3.sh https://repo.continuum.io/miniconda/Miniconda3-4.3.21-Linux-x86_64.sh \
-    && echo bec6203dbb2f53011e974e9bf4d46e93 Miniconda3.sh | md5sum -c - \
+    && echo c1c15d3baba15bf50293ae963abef853 Miniconda3.sh | md5sum -c - \
     && bash Miniconda3.sh -b -p $CONDA_DIR \
     && rm Miniconda3.sh \
     && export PATH=$CONDA_DIR/bin:$PATH \
