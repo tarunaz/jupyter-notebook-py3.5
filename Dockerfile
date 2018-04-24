@@ -26,7 +26,7 @@ LABEL io.k8s.description="PySpark Jupyter Notebook." \
       io.k8s.display-name="PySpark Jupyter Notebook." \
       io.openshift.expose-services="8888:http"
 
-RUN conda config --set ssl_verify False
+#RUN conda config --set ssl_verify False
 
 RUN echo 'PS1="\u@\h:\w\\$ \[$(tput sgr0)\]"' >> /root/.bashrc \
     && chgrp root /etc/passwd \
